@@ -1,1 +1,1711 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dave Kläy | Bewerbung ABU-Lehrperson GIBB</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Berner Farben - korrigiert */
+            --bern-red: #CE1126;
+            --bern-red-dark: #A00D1E;
+            --bern-yellow: #FFCC00;
+            --bern-yellow-dark: #E6B800;
+            --bern-black: #1A1A1A;
+            
+            /* Neutrals */
+            --cream: #FAF8F5;
+            --warm-white: #FFFEF9;
+            --text-dark: #2D2D2D;
+            --text-muted: #6B6B6B;
+            
+            /* Spacing */
+            --section-padding: 120px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            background-color: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+            font-weight: 400;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        /* ============================================
+           NAVIGATION
+           ============================================ */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 18px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .nav-logo svg {
+            width: 32px;
+            height: 38px;
+        }
+        
+        .nav-logo span {
+            font-family: 'Playfair Display', serif;
+            color: var(--warm-white);
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--warm-white);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--bern-red);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--bern-yellow);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--bern-black) 0%, #2a2a2a 50%, var(--bern-black) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 200%;
+            background: radial-gradient(ellipse, rgba(206, 17, 38, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        /* Korrektes Berner Wappen als dekoratives Element */
+        .hero-wappen {
+            position: absolute;
+            right: 6%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 320px;
+            opacity: 0.15;
+        }
+        
+        .hero-wappen svg {
+            width: 100%;
+            height: auto;
+        }
+        
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            padding: 0 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-subtitle {
+            color: var(--bern-yellow);
+            font-size: 0.95rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .hero h1 {
+            color: var(--warm-white);
+            font-size: 4.5rem;
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+        }
+        
+        .hero-tagline {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 1.4rem;
+            font-weight: 300;
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--bern-red);
+            color: white;
+            padding: 18px 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: 2px solid var(--bern-red);
+        }
+        
+        .hero-cta:hover {
+            background: transparent;
+            color: var(--bern-red);
+        }
+        
+        .hero-cta svg {
+            transition: transform 0.3s ease;
+        }
+        
+        .hero-cta:hover svg {
+            transform: translateY(4px);
+        }
+        
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+        
+        .scroll-indicator svg {
+            stroke: var(--bern-yellow);
+            opacity: 0.6;
+        }
+        
+        /* ============================================
+           SECTIONS - GENERAL STYLES
+           ============================================ */
+        section {
+            padding: var(--section-padding) 10%;
+            position: relative;
+        }
+        
+        /* Chapter Number System */
+        .chapter-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .chapter-number {
+            flex-shrink: 0;
+            width: 70px;
+            height: 70px;
+            background: var(--bern-red);
+            color: white;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .chapter-number::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 40px;
+            background: linear-gradient(to bottom, var(--bern-red), transparent);
+        }
+        
+        .chapter-info {
+            padding-top: 8px;
+        }
+        
+        .chapter-label {
+            color: var(--bern-red);
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .chapter-title {
+            font-size: 2.8rem;
+            color: var(--bern-black);
+        }
+        
+        /* Dark section variant */
+        section.dark {
+            background: var(--bern-black);
+            color: var(--warm-white);
+        }
+        
+        section.dark .chapter-number {
+            background: var(--bern-yellow);
+            color: var(--bern-black);
+        }
+        
+        section.dark .chapter-number::after {
+            background: linear-gradient(to bottom, var(--bern-yellow), transparent);
+        }
+        
+        section.dark .chapter-label {
+            color: var(--bern-yellow);
+        }
+        
+        section.dark .chapter-title {
+            color: var(--warm-white);
+        }
+        
+        /* ============================================
+           INTRO VIDEO SECTION
+           ============================================ */
+        .intro-video {
+            background: var(--warm-white);
+        }
+        
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            background: var(--bern-black);
+            border: 4px solid var(--bern-black);
+            box-shadow: 20px 20px 0 var(--bern-red);
+        }
+        
+        .video-wrapper iframe,
+        .video-wrapper video,
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .video-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--bern-black) 0%, #333 100%);
+            color: var(--warm-white);
+        }
+        
+        .video-placeholder svg {
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+        
+        .video-placeholder span {
+            font-size: 1.1rem;
+            opacity: 0.7;
+        }
+        
+        .video-description {
+            margin-top: 40px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* ============================================
+           WARUM GIBB SECTION
+           ============================================ */
+        .warum-gibb {
+            background: var(--bern-black);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .warum-gibb::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFCC00' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+        
+        .gibb-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .gibb-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--bern-yellow);
+        }
+        
+        .gibb-text p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            opacity: 0.85;
+            margin-bottom: 20px;
+        }
+        
+        .gibb-highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .highlight-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid var(--bern-red);
+            transition: all 0.3s ease;
+        }
+        
+        .highlight-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateX(5px);
+        }
+        
+        .highlight-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--bern-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .highlight-icon svg {
+            stroke: white;
+        }
+        
+        .highlight-content h4 {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--warm-white);
+        }
+        
+        .highlight-content p {
+            font-size: 0.95rem;
+            opacity: 0.7;
+            margin: 0;
+        }
+        
+        /* ============================================
+           IDEEN & WERTE SECTION
+           ============================================ */
+        .ideen-werte {
+            background: var(--cream);
+        }
+        
+        .werte-intro {
+            max-width: 800px;
+            margin-bottom: 50px;
+            font-size: 1.15rem;
+            color: var(--text-muted);
+        }
+        
+        .werte-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        
+        .werte-card {
+            background: var(--warm-white);
+            padding: 50px 40px;
+            position: relative;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.4s ease;
+            overflow: hidden;
+        }
+        
+        .werte-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--bern-red);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        
+        .werte-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+        
+        .werte-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .werte-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: var(--bern-yellow);
+            opacity: 0.4;
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            line-height: 1;
+        }
+        
+        .werte-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--bern-black);
+        }
+        
+        .werte-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        
+        /* ============================================
+           UNTERRICHTSBEISPIELE - INTERACTIVE CARDS
+           ============================================ */
+        .beispiele {
+            background: var(--warm-white);
+        }
+        
+        .beispiele-intro {
+            max-width: 800px;
+            margin-bottom: 50px;
+            font-size: 1.15rem;
+            color: var(--text-muted);
+        }
+        
+        .beispiele-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        
+        .beispiel-card {
+            background: var(--cream);
+            border: 2px solid var(--bern-black);
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        
+        .beispiel-card:hover {
+            box-shadow: 8px 8px 0 var(--bern-red);
+            transform: translate(-4px, -4px);
+        }
+        
+        .beispiel-header {
+            position: relative;
+            height: 200px;
+            background: linear-gradient(135deg, var(--bern-black) 0%, #444 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        
+        .beispiel-header::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(26,26,26,0.8) 0%, transparent 50%);
+        }
+        
+        .beispiel-preview-text {
+            color: white;
+            opacity: 0.4;
+            font-size: 0.9rem;
+            z-index: 1;
+        }
+        
+        .beispiel-tag {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--bern-red);
+            color: white;
+            padding: 6px 14px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            z-index: 2;
+        }
+        
+        .beispiel-expand-btn {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: var(--bern-yellow);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+        
+        .beispiel-expand-btn:hover {
+            background: var(--bern-red);
+        }
+        
+        .beispiel-expand-btn svg {
+            stroke: var(--bern-black);
+            transition: transform 0.3s ease;
+        }
+        
+        .beispiel-expand-btn:hover svg {
+            stroke: white;
+        }
+        
+        .beispiel-card.expanded .beispiel-expand-btn svg {
+            transform: rotate(45deg);
+        }
+        
+        .beispiel-summary {
+            padding: 30px;
+        }
+        
+        .beispiel-summary h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: var(--bern-black);
+        }
+        
+        .beispiel-summary p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+        
+        .beispiel-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        
+        .beispiel-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .beispiel-meta svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--bern-red);
+        }
+        
+        /* Expandable Details */
+        .beispiel-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.5s ease;
+            background: white;
+            border-top: 2px dashed var(--bern-yellow);
+        }
+        
+        .beispiel-card.expanded .beispiel-details {
+            max-height: 600px;
+            padding: 30px;
+        }
+        
+        .beispiel-details h4 {
+            font-size: 1.1rem;
+            color: var(--bern-red);
+            margin-bottom: 15px;
+        }
+        
+        .beispiel-details p {
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .beispiel-details ul {
+            margin: 15px 0;
+            padding-left: 20px;
+            color: var(--text-muted);
+        }
+        
+        .beispiel-details li {
+            margin-bottom: 8px;
+        }
+        
+        .beispiel-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--bern-red);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-top: 15px;
+            transition: gap 0.3s ease;
+        }
+        
+        .beispiel-link:hover {
+            gap: 15px;
+        }
+        
+        /* ============================================
+           WERDEGANG TIMELINE
+           ============================================ */
+        .werdegang {
+            background: var(--cream);
+        }
+        
+        .werdegang-intro {
+            max-width: 800px;
+            margin-bottom: 50px;
+        }
+        
+        .werdegang-intro p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+        }
+        
+        .werdegang-video {
+            max-width: 700px;
+            margin-bottom: 80px;
+        }
+        
+        .werdegang-video .video-wrapper {
+            box-shadow: 15px 15px 0 var(--bern-yellow);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            padding-left: 80px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--bern-red), var(--bern-yellow));
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-bottom: 50px;
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: slideIn 0.6s ease forwards;
+        }
+        
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: -58px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            background: var(--bern-red);
+            border: 4px solid var(--cream);
+            border-radius: 50%;
+        }
+        
+        .timeline-date {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--bern-red);
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        
+        .timeline-item h3 {
+            font-size: 1.4rem;
+            color: var(--bern-black);
+            margin-bottom: 8px;
+        }
+        
+        .timeline-item h4 {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--bern-red);
+            margin-bottom: 12px;
+        }
+        
+        .timeline-item p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+        
+        .timeline-section-title {
+            font-size: 1.1rem;
+            color: var(--bern-yellow);
+            background: var(--bern-black);
+            display: inline-block;
+            padding: 8px 20px;
+            margin-bottom: 30px;
+            margin-left: -80px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        /* ============================================
+           DOKUMENTE SECTION
+           ============================================ */
+        .dokumente {
+            background: var(--bern-black);
+            color: var(--warm-white);
+        }
+        
+        .dokumente-intro {
+            max-width: 600px;
+            margin-bottom: 50px;
+            opacity: 0.8;
+        }
+        
+        .dokumente-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+        }
+        
+        .dokument-card {
+            background: rgba(255,255,255,0.03);
+            padding: 40px 30px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--warm-white);
+            display: block;
+        }
+        
+        .dokument-card:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: var(--bern-red);
+            transform: translateY(-5px);
+        }
+        
+        .dokument-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            background: var(--bern-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .dokument-icon svg {
+            stroke: white;
+        }
+        
+        .dokument-card h4 {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .dokument-card span {
+            font-size: 0.85rem;
+            opacity: 0.5;
+        }
+        
+        /* ============================================
+           FOOTER
+           ============================================ */
+        footer {
+            background: var(--bern-black);
+            color: var(--warm-white);
+            padding: 50px 10%;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .footer-brand svg {
+            width: 50px;
+            height: 60px;
+        }
+        
+        .footer-brand-text h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .footer-brand-text p {
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+        
+        .footer-tagline {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--bern-yellow);
+            font-style: italic;
+        }
+        
+        /* ============================================
+           SCROLL REVEAL ANIMATION
+           ============================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 1024px) {
+            .gibb-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .werte-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .beispiele-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .dokumente-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .chapter-header {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .chapter-number::after {
+                display: none;
+            }
+            
+            section {
+                padding: 80px 5%;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+                text-align: center;
+            }
+            
+            .timeline-section-title {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-logo">
+            <!-- Korrektes Mini Berner Wappen -->
+            <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+                <!-- Schild Grundform -->
+                <defs>
+                    <clipPath id="shieldClip">
+                        <path d="M5 5 L95 5 L95 85 Q50 115 5 85 Z"/>
+                    </clipPath>
+                </defs>
+                <!-- Rote Basis -->
+                <path d="M5 5 L95 5 L95 85 Q50 115 5 85 Z" fill="#CE1126"/>
+                <!-- Gelber Schrägbalken -->
+                <path d="M-10 70 L70 -10 L110 -10 L110 30 L30 110 L-10 110 Z" fill="#FFCC00" clip-path="url(#shieldClip)"/>
+                <!-- Schwarzer Bär (vereinfacht) -->
+                <g transform="translate(50, 58) rotate(-25)">
+                    <ellipse cx="0" cy="0" rx="22" ry="16" fill="#1A1A1A"/>
+                    <circle cx="-15" cy="-8" r="10" fill="#1A1A1A"/>
+                    <circle cx="-22" cy="-16" r="5" fill="#1A1A1A"/>
+                    <circle cx="-10" cy="-16" r="5" fill="#1A1A1A"/>
+                    <ellipse cx="-18" cy="-5" rx="3" ry="2" fill="#8B4513"/>
+                    <path d="M-16 -2 Q-15 2 -18 4" stroke="#CE1126" stroke-width="2" fill="none"/>
+                    <ellipse cx="18" cy="8" rx="6" ry="5" fill="#1A1A1A"/>
+                    <ellipse cx="10" cy="14" rx="6" ry="5" fill="#1A1A1A"/>
+                    <ellipse cx="-8" cy="14" rx="6" ry="5" fill="#1A1A1A"/>
+                    <ellipse cx="-18" cy="8" rx="6" ry="5" fill="#1A1A1A"/>
+                    <!-- Krallen -->
+                    <g stroke="#CE1126" stroke-width="1.5" fill="none">
+                        <path d="M22 12 L26 14 M24 8 L28 8 M22 4 L26 2"/>
+                        <path d="M14 18 L16 22 M10 19 L10 23 M6 18 L4 22"/>
+                        <path d="M-4 18 L-2 22 M-8 19 L-8 23 M-12 18 L-14 22"/>
+                        <path d="M-14 12 L-18 14 M-16 8 L-20 8 M-14 4 L-18 2"/>
+                    </g>
+                </g>
+                <!-- Rand -->
+                <path d="M5 5 L95 5 L95 85 Q50 115 5 85 Z" fill="none" stroke="#1A1A1A" stroke-width="3"/>
+            </svg>
+            <span>Dave Kläy</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#intro">Intro</a></li>
+            <li><a href="#warum-gibb">Warum GIBB</a></li>
+            <li><a href="#werte">Werte</a></li>
+            <li><a href="#beispiele">Beispiele</a></li>
+            <li><a href="#werdegang">Werdegang</a></li>
+            <li><a href="#dokumente">Dokumente</a></li>
+        </ul>
+    </nav>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Korrektes grosses Berner Wappen dekorativ -->
+        <div class="hero-wappen">
+            <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <clipPath id="shieldClipLarge">
+                        <path d="M5 5 L95 5 L95 85 Q50 115 5 85 Z"/>
+                    </clipPath>
+                </defs>
+                <path d="M5 5 L95 5 L95 85 Q50 115 5 85 Z" fill="#CE1126"/>
+                <path d="M-10 70 L70 -10 L110 -10 L110 30 L30 110 L-10 110 Z" fill="#FFCC00" clip-path="url(#shieldClipLarge)"/>
+                <g transform="translate(50, 58) rotate(-25)">
+                    <ellipse cx="0" cy="0" rx="22" ry="16" fill="#1A1A1A"/>
+                    <circle cx="-15" cy="-8" r="10" fill="#1A1A1A"/>
+                    <circle cx="-22" cy="-16" r="5" fill="#1A1A1A"/>
+                    <circle cx="-10" cy="-16" r="5" fill="#1A1A1A"/>
+                    <ellipse cx="-18" cy="-5" rx="3" ry="2" fill="#8B4513"/>
+                    <path d="M-16 -2 Q-15 2 -18 4" stroke="#CE1126" stroke-width="2" fill="none"/>
+                    <ellipse cx="18" cy="8" rx="6" ry="5" fill="#1A1A1A"/>
+                    <ellipse cx="10" cy="14" rx="6" ry="5" fill="#1A1A1A"/>
+                    <ellipse cx="-8" cy="14" rx="6" ry="5" fill="#1A1A1A"/>
+                    <ellipse cx="-18" cy="8" rx="6" ry="5" fill="#1A1A1A"/>
+                    <g stroke="#CE1126" stroke-width="1.5" fill="none">
+                        <path d="M22 12 L26 14 M24 8 L28 8 M22 4 L26 2"/>
+                        <path d="M14 18 L16 22 M10 19 L10 23 M6 18 L4 22"/>
+                        <path d="M-4 18 L-2 22 M-8 19 L-8 23 M-12 18 L-14 22"/>
+                        <path d="M-14 12 L-18 14 M-16 8 L-20 8 M-14 4 L-18 2"/>
+                    </g>
+                </g>
+                <path d="M5 5 L95 5 L95 85 Q50 115 5 85 Z" fill="none" stroke="#1A1A1A" stroke-width="3"/>
+            </svg>
+        </div>
+        
+        <div class="hero-content">
+            <p class="hero-subtitle">Bewerbung als ABU-Lehrperson</p>
+            <h1>Dave Kläy</h1>
+            <p class="hero-tagline">Lernen praxisnah gestalten – mit Leidenschaft für Berufsbildung und innovative Didaktik</p>
+            <a href="#intro" class="hero-cta">
+                Entdecken
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 5v14M5 12l7 7 7-7"/>
+                </svg>
+            </a>
+        </div>
+        
+        <div class="scroll-indicator">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M5 12l7 7 7-7"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Section 1: Intro Video -->
+    <section id="intro" class="intro-video">
+        <div class="chapter-header reveal">
+            <div class="chapter-number">1</div>
+            <div class="chapter-info">
+                <span class="chapter-label">Willkommen</span>
+                <h2 class="chapter-title">Persönliche Vorstellung</h2>
+            </div>
+        </div>
+        
+        <div class="video-container reveal">
+            <div class="video-wrapper">
+                <!-- Video Platzhalter - ersetzen mit: <video controls src="intro.mp4"></video> -->
+                <div class="video-placeholder">
+                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/>
+                    </svg>
+                    <span>Intro-Video hier einfügen</span>
+                </div>
+            </div>
+            <p class="video-description">
+                In diesem kurzen Video stelle ich mich vor und beantworte die wichtigsten Fragen, 
+                die Sie sich vielleicht über mich als zukünftige Lehrperson stellen.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 2: Warum GIBB -->
+    <section id="warum-gibb" class="warum-gibb dark">
+        <div class="chapter-header reveal">
+            <div class="chapter-number">2</div>
+            <div class="chapter-info">
+                <span class="chapter-label">Motivation</span>
+                <h2 class="chapter-title">Warum die GIBB?</h2>
+            </div>
+        </div>
+        
+        <div class="gibb-content">
+            <div class="gibb-text reveal">
+                <h3>Zurück in die Heimat – mit klarem Ziel</h3>
+                <p>
+                    Vor etwas mehr als vier Jahren dachte ich mir: Jetzt bin ich da, wo ich schon immer hinwollte. 
+                    Mein Traumjob in Aussicht und mit dem Berner Oberland endlich in den Bergen wohnhaft. 
+                    Den Beruf als ABU-Lehrperson würde ich noch immer als meinen Traumjob bezeichnen.
+                </p>
+                <p>
+                    Nach einem familiär bedingten Umweg über den Aargau haben meine Frau und ich uns entschieden, 
+                    wieder zurück ins Oberland zu ziehen. Wir fühlen uns hier einfach richtig wohl – 
+                    und genau hier kommen Sie, die GIBB und all Ihre Lernenden ins Spiel.
+                </p>
+            </div>
+            
+            <div class="gibb-highlights reveal">
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 15l-2 5l9-10h-6l2-5l-9 10h6z"/>
+                        </svg>
+                    </div>
+                    <div class="highlight-content">
+                        <h4>23 SwissSkills-Podestplätze</h4>
+                        <p>Ein beeindruckender Beweis für die Qualität der an der GIBB angebotenen Ausbildungen.</p>
+                    </div>
+                </div>
+                
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 16v-4M12 8h.01"/>
+                        </svg>
+                    </div>
+                    <div class="highlight-content">
+                        <h4>Innovativer ABU-Schullehrplan</h4>
+                        <p>Nicht nur angenehm interaktiv gestaltet, sondern mit prominentem Platz für Medienkompetenz.</p>
+                    </div>
+                </div>
+                
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <div class="highlight-content">
+                        <h4>Wohnort Thun</h4>
+                        <p>Endlich wieder in der Region, die wir so vermisst haben – bereit für kurze Wege und volle Energie.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Ideen & Werte -->
+    <section id="werte" class="ideen-werte">
+        <div class="chapter-header reveal">
+            <div class="chapter-number">3</div>
+            <div class="chapter-info">
+                <span class="chapter-label">Philosophie</span>
+                <h2 class="chapter-title">Meine Ideen & Werte als Lehrperson</h2>
+            </div>
+        </div>
+        
+        <p class="werte-intro reveal">
+            Als ursprünglicher Quereinsteiger bringe ich ein sehr breites Spektrum an Berufs- und Lebenserfahrungen mit, 
+            auf welche ich in meinem Unterrichtsalltag gut zurückgreifen kann.
+        </p>
+        
+        <div class="werte-grid">
+            <div class="werte-card reveal">
+                <span class="werte-number">01</span>
+                <h3>Praxisbezug</h3>
+                <p>
+                    Von der Modebranche über Finanzen bis zur Hotellerie – meine vielfältige Berufserfahrung 
+                    ermöglicht es mir, theoretische Konzepte mit realen Beispielen zu verbinden. 
+                    So wird der ABU-Unterricht für die Lernenden greifbar und relevant.
+                </p>
+            </div>
+            
+            <div class="werte-card reveal">
+                <span class="werte-number">02</span>
+                <h3>Innovation & Pilotprojekte</h3>
+                <p>
+                    Ich freue mich immer, wenn ich zusammen mit den Lernenden auch neue Sachen und 
+                    Pilotprojekte ausprobieren kann. Diese innovative und für Fortschritt offene 
+                    Haltung ist mir sehr wichtig.
+                </p>
+            </div>
+            
+            <div class="werte-card reveal">
+                <span class="werte-number">03</span>
+                <h3>Kontinuierliche Weiterbildung</h3>
+                <p>
+                    Ich bin hochmotiviert, mich berufsspezifisch immer weiterzubilden und das neu 
+                    Gelernte möglichst effizient in die Praxis umzusetzen – aktuell mit einem 
+                    Master in Europäischer Geschichte.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Unterrichtsbeispiele -->
+    <section id="beispiele" class="beispiele">
+        <div class="chapter-header reveal">
+            <div class="chapter-number">4</div>
+            <div class="chapter-info">
+                <span class="chapter-label">Portfolio</span>
+                <h2 class="chapter-title">Unterrichtsbeispiele</h2>
+            </div>
+        </div>
+        
+        <p class="beispiele-intro reveal">
+            Hier ein Einblick in meine Arbeit – interaktive Lernpfade, die Theorie und Praxis verbinden 
+            und die Lernenden dort abholen, wo sie stehen.
+        </p>
+        
+        <div class="beispiele-grid">
+            <!-- Beispiel 1 -->
+            <div class="beispiel-card reveal" id="beispiel-1">
+                <div class="beispiel-header" onclick="toggleBeispiel('beispiel-1')">
+                    <span class="beispiel-tag">Interaktiver Lernpfad</span>
+                    <span class="beispiel-preview-text">Screenshot / Demo</span>
+                    <button class="beispiel-expand-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"/>
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="beispiel-summary">
+                    <h3>Wohnen – Mietrecht verstehen</h3>
+                    <p>Interaktiver Lernpfad für EBA-Lernende mit dem Protagonisten Leandro, der durch realistische Wohnungssuche-Szenarien führt.</p>
+                    <div class="beispiel-meta">
+                        <span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                            </svg>
+                            EBA-Lernende
+                        </span>
+                        <span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            ~9 Lektionen
+                        </span>
+                    </div>
+                </div>
+                <div class="beispiel-details">
+                    <h4>Projektbeschreibung</h4>
+                    <p>
+                        Ein webbasierter Lernpfad, der EBA-Lernende durch die Welt des Mietrechts führt. 
+                        Der 17-jährige Protagonist Leandro sucht seine erste eigene Wohnung und nimmt 
+                        die Lernenden mit auf diese Reise.
+                    </p>
+                    <h4>Lernziele</h4>
+                    <ul>
+                        <li>Wohnungsinserate lesen und verstehen</li>
+                        <li>Mietverträge interpretieren</li>
+                        <li>Rechte und Pflichten als Mieter kennen</li>
+                        <li>Budget für Wohnkosten erstellen</li>
+                    </ul>
+                    <h4>Eingesetzte Tools</h4>
+                    <p>HTML/CSS/JavaScript, GitHub Pages, interaktive Entscheidungsszenarien</p>
+                    <a href="#" class="beispiel-link">
+                        Demo folgt
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Beispiel 2 -->
+            <div class="beispiel-card reveal" id="beispiel-2">
+                <div class="beispiel-header" onclick="toggleBeispiel('beispiel-2')">
+                    <span class="beispiel-tag">H5P Module</span>
+                    <span class="beispiel-preview-text">Screenshot / Demo</span>
+                    <button class="beispiel-expand-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"/>
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="beispiel-summary">
+                    <h3>Mit Geld umgehen</h3>
+                    <p>Umfassender Lernpfad zur Finanzkompetenz mit sechs Modulen – von Budgetplanung bis zu digitalen Finanzen.</p>
+                    <div class="beispiel-meta">
+                        <span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                            </svg>
+                            Berufsschüler
+                        </span>
+                        <span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="7" height="7"/>
+                                <rect x="14" y="3" width="7" height="7"/>
+                                <rect x="14" y="14" width="7" height="7"/>
+                                <rect x="3" y="14" width="7" height="7"/>
+                            </svg>
+                            6 Module
+                        </span>
+                    </div>
+                </div>
+                <div class="beispiel-details">
+                    <h4>Projektbeschreibung</h4>
+                    <p>
+                        Ein modularer Lernpfad zur Förderung der Finanzkompetenz, entwickelt für 
+                        den Einsatz in ILIAS mit H5P-Interaktionen.
+                    </p>
+                    <h4>Module im Überblick</h4>
+                    <ul>
+                        <li>Modul 1: Lohn und Gehalt verstehen</li>
+                        <li>Modul 2: Budgetplanung</li>
+                        <li>Modul 3: Konsumentscheidungen</li>
+                        <li>Modul 4: Finanzierung und Kredit</li>
+                        <li>Modul 5: Schuldenprävention</li>
+                        <li>Modul 6: Digitale Finanzen</li>
+                    </ul>
+                    <h4>Eingesetzte Tools</h4>
+                    <p>ILIAS LMS, H5P (Interactive Video, Branching Scenario, Quiz)</p>
+                    <a href="#" class="beispiel-link">
+                        Demo folgt
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Werdegang -->
+    <section id="werdegang" class="werdegang">
+        <div class="chapter-header reveal">
+            <div class="chapter-number">5</div>
+            <div class="chapter-info">
+                <span class="chapter-label">Karriere</span>
+                <h2 class="chapter-title">Mein Werdegang</h2>
+            </div>
+        </div>
+        
+        <div class="werdegang-intro reveal">
+            <p>
+                Im folgenden Video gehe ich auf die wichtigsten Stationen meines Werdegangs ein 
+                und erkläre, wie mich meine Erfahrungen zu der Lehrperson gemacht haben, die ich heute bin.
+            </p>
+        </div>
+        
+        <div class="werdegang-video reveal">
+            <div class="video-wrapper">
+                <!-- Video Platzhalter - ersetzen mit: <video controls src="werdegang.mp4"></video> -->
+                <div class="video-placeholder">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/>
+                    </svg>
+                    <span>Werdegang-Video hier einfügen</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline">
+            <!-- Berufserfahrung Lehrtätigkeit -->
+            <div class="timeline-section-title">Lehrtätigkeit</div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span class="timeline-date">SEIT 08.2023</span>
+                <h3>Lehrkraft für Allgemeinbildung</h3>
+                <h4>Berufsschule Lenzburg</h4>
+                <p>Unterricht EBA und EFZ, zusätzlich Prüfungsleiter QV Allgemeinbildung</p>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span class="timeline-date">09.2021 – 07.2023</span>
+                <h3>Lehrkraft für Allgemeinbildung</h3>
+                <h4>HotellerieSuisse, Schulhotel Regina, Interlaken</h4>
+                <p>Unterricht im Blockkurssystem für Hotelfachleute, Restaurantfachleute und Hotelkommunikationsfachleute (EBA und EFZ)</p>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span class="timeline-date">08.2021 – 07.2022</span>
+                <h3>Lehrkraft für Allgemeinbildung</h3>
+                <h4>WISS Schulen für Wirtschaft Informatik Immobilien, Bern</h4>
+                <p>Unterricht EFZ</p>
+            </div>
+            
+            <!-- Berufserfahrung Wirtschaft -->
+            <div class="timeline-section-title" style="margin-top: 50px;">Wirtschaft & Finanzen</div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span class="timeline-date">09.2019 – 08.2021</span>
+                <h3>Tax Consultant – Financial Services</h3>
+                <h4>Ernst & Young AG, Zürich</h4>
+                <p>Berechnung steuerbarer Erträge, Vorbereitung von Steuererklärungen, Unterstützung bei Umstrukturierungen</p>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span class="timeline-date">09.2016 – 08.2019</span>
+                <h3>Merchandise Planner – Uhren und Schmuck</h3>
+                <h4>Manor AG, Basel</h4>
+                <p>OTB Management, Lifecycle Management, Finanz- und Sortimentsanalysen</p>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span class="timeline-date">03.2016 – 08.2016</span>
+                <h3>Demand Planner – Tommy Hilfiger</h3>
+                <h4>PVH, Amsterdam</h4>
+                <p>Monatlicher Forecast für die gesamte EMEA Region</p>
+            </div>
+            
+            <!-- Ausbildung -->
+            <div class="timeline-section-title" style="margin-top: 50px;">Ausbildung</div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span class="timeline-date">SEIT 09.2025</span>
+                <h3>Master of Arts – Europäische Geschichte</h3>
+                <h4>Universität Basel</h4>
+                <p>In globaler Perspektive</p>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span class="timeline-date">09.2021 – 06.2024</span>
+                <h3>Dipl. Berufsfachschullehrer ABU</h3>
+                <h4>Eidgenössische Hochschule für Berufsbildung EHB</h4>
+                <p>Diplomierter Berufsfachschullehrer für den allgemeinbildenden Unterricht</p>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span class="timeline-date">02.2011 – 07.2014</span>
+                <h3>Bachelor of Arts – Geschichte & Wirtschaft</h3>
+                <h4>Universität Basel</h4>
+                <p>Mit Prädikat magna cum laude</p>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span class="timeline-date">08.2005 – 06.2009</span>
+                <h3>Zweisprachige Maturität</h3>
+                <h4>Kantonsschule Wettingen</h4>
+                <p>Schwerpunkt: Wirtschaft und Recht</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Dokumente -->
+    <section id="dokumente" class="dokumente dark">
+        <div class="chapter-header reveal">
+            <div class="chapter-number">6</div>
+            <div class="chapter-info">
+                <span class="chapter-label">Downloads</span>
+                <h2 class="chapter-title">Bewerbungsdossier</h2>
+            </div>
+        </div>
+        
+        <p class="dokumente-intro reveal">
+            Hier finden Sie mein vollständiges Bewerbungsdossier zum Download – alle Unterlagen, 
+            die Sie für eine fundierte Entscheidung benötigen.
+        </p>
+        
+        <div class="dokumente-grid reveal">
+            <a href="#" class="dokument-card">
+                <div class="dokument-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                        <polyline points="10 9 9 9 8 9"/>
+                    </svg>
+                </div>
+                <h4>Lebenslauf</h4>
+                <span>PDF</span>
+            </a>
+            
+            <a href="#" class="dokument-card">
+                <div class="dokument-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="12" y1="18" x2="12" y2="12"/>
+                        <line x1="9" y1="15" x2="15" y2="15"/>
+                    </svg>
+                </div>
+                <h4>Motivationsschreiben</h4>
+                <span>PDF</span>
+            </a>
+            
+            <a href="#" class="dokument-card">
+                <div class="dokument-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+                    </svg>
+                </div>
+                <h4>Zeugnisse</h4>
+                <span>PDF</span>
+            </a>
+            
+            <a href="#" class="dokument-card">
+                <div class="dokument-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                        <circle cx="8.5" cy="8.5" r="1.5"/>
+                        <polyline points="21 15 16 10 5 21"/>
+                    </svg>
+                </div>
+                <h4>Diplome</h4>
+                <span>PDF</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <!-- Korrektes Berner Wappen -->
+                <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <clipPath id="shieldClipFooter">
+                            <path d="M5 5 L95 5 L95 85 Q50 115 5 85 Z"/>
+                        </clipPath>
+                    </defs>
+                    <path d="M5 5 L95 5 L95 85 Q50 115 5 85 Z" fill="#CE1126"/>
+                    <path d="M-10 70 L70 -10 L110 -10 L110 30 L30 110 L-10 110 Z" fill="#FFCC00" clip-path="url(#shieldClipFooter)"/>
+                    <g transform="translate(50, 58) rotate(-25)">
+                        <ellipse cx="0" cy="0" rx="22" ry="16" fill="#1A1A1A"/>
+                        <circle cx="-15" cy="-8" r="10" fill="#1A1A1A"/>
+                        <circle cx="-22" cy="-16" r="5" fill="#1A1A1A"/>
+                        <circle cx="-10" cy="-16" r="5" fill="#1A1A1A"/>
+                        <ellipse cx="-18" cy="-5" rx="3" ry="2" fill="#8B4513"/>
+                        <path d="M-16 -2 Q-15 2 -18 4" stroke="#CE1126" stroke-width="2" fill="none"/>
+                        <ellipse cx="18" cy="8" rx="6" ry="5" fill="#1A1A1A"/>
+                        <ellipse cx="10" cy="14" rx="6" ry="5" fill="#1A1A1A"/>
+                        <ellipse cx="-8" cy="14" rx="6" ry="5" fill="#1A1A1A"/>
+                        <ellipse cx="-18" cy="8" rx="6" ry="5" fill="#1A1A1A"/>
+                        <g stroke="#CE1126" stroke-width="1.5" fill="none">
+                            <path d="M22 12 L26 14 M24 8 L28 8 M22 4 L26 2"/>
+                            <path d="M14 18 L16 22 M10 19 L10 23 M6 18 L4 22"/>
+                            <path d="M-4 18 L-2 22 M-8 19 L-8 23 M-12 18 L-14 22"/>
+                            <path d="M-14 12 L-18 14 M-16 8 L-20 8 M-14 4 L-18 2"/>
+                        </g>
+                    </g>
+                    <path d="M5 5 L95 5 L95 85 Q50 115 5 85 Z" fill="none" stroke="#1A1A1A" stroke-width="3"/>
+                </svg>
+                <div class="footer-brand-text">
+                    <h4>Dave Kläy</h4>
+                    <p>Bewerbung ABU-Lehrperson GIBB · 2025</p>
+                </div>
+            </div>
+            <p class="footer-tagline">«Lernen praxisnah gestalten»</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Scroll Reveal Animation
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', reveal);
+        window.addEventListener('load', reveal);
+        
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Toggle Beispiel Cards
+        function toggleBeispiel(id) {
+            const card = document.getElementById(id);
+            card.classList.toggle('expanded');
+        }
+    </script>
+</body>
+</html>
