@@ -896,9 +896,9 @@
         
         .dokumente-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
-            max-width: 1000px;
+            max-width: 900px;
         }
         
         .dokument-card {
@@ -1166,7 +1166,8 @@
                 <div class="highlight-item">
                     <div class="highlight-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 15l-2 5l9-10h-6l2-5l-9 10h6z"/>
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 16v-4M12 8h.01"/>
                         </svg>
                     </div>
                     <div class="highlight-content">
@@ -1238,8 +1239,7 @@
         </div>
         
         <p class="beispiele-intro reveal">
-            Hier ein Einblick in meine Arbeit – interaktive Lernpfade, die Theorie und Praxis verbinden 
-            und die Lernenden dort abholen, wo sie stehen.
+            Hier ein kleiner Einblick in meine Arbeit.
         </p>
         
         <div class="beispiele-grid">
@@ -1265,13 +1265,12 @@
                 <div class="beispiel-details">
                     <h4>Projektbeschreibung</h4>
                     <p>
-                        Ein webbasierter Lernpfad, der EBA-Lernende durch die Welt des Mietrechts führt. 
                         Der 18-jährige Protagonist Leandro hat gerade seine Lehre abgeschlossen und sucht 
                         nun seine erste eigene Wohnung und nimmt die Lernenden mit auf diese Reise. Die 
-                        Lernenden können selbständig auf der Website navigieren und mit Leandro miterleben, 
-                        wie es vor der Wohnungssuche zuerst ein aktuelles Budget braucht, wie eine Wohnung 
-                        schliesslich korrekt und rechtzeitig gekündigt wird und was es dazwischen alles noch 
-                        zu berücksichtigen gibt.
+                        Lernenden können selbständig auf dem webbasierten Lernpfad navigieren und mit 
+                        Leandro miterleben, wie es vor der Wohnungssuche zuerst ein aktuelles Budget 
+                        braucht, wie eine Wohnung schliesslich korrekt und rechtzeitig gekündigt wird 
+                        und was es dazwischen alles noch zu berücksichtigen gibt.
                     </p>
                     <a href="https://daveklaey.github.io/Wohnen-eba/index.html" target="_blank" class="beispiel-link">
                         Zum interaktiven Lernpfad
@@ -1436,7 +1435,21 @@
         </p>
         
         <div class="dokumente-grid reveal">
-            <a href="#" class="dokument-card">
+            <a href="https://raw.githubusercontent.com/daveklaey/gibb/main/docs/Motivationsschreiben.pdf" target="_blank" class="dokument-card">
+                <div class="dokument-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                        <polyline points="10 9 9 9 8 9"/>
+                    </svg>
+                </div>
+                <h4>Motivationsschreiben</h4>
+                <span>PDF</span>
+            </a>
+            
+            <a href="https://raw.githubusercontent.com/daveklaey/gibb/main/docs/Lebenslauf.pdf" target="_blank" class="dokument-card">
                 <div class="dokument-icon">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
@@ -1450,38 +1463,17 @@
                 <span>PDF</span>
             </a>
             
-            <a href="#" class="dokument-card">
+            <a href="https://raw.githubusercontent.com/daveklaey/gibb/main/docs/Zeugnisse.pdf" target="_blank" class="dokument-card">
                 <div class="dokument-icon">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
                         <polyline points="14 2 14 8 20 8"/>
-                        <line x1="12" y1="18" x2="12" y2="12"/>
-                        <line x1="9" y1="15" x2="15" y2="15"/>
-                    </svg>
-                </div>
-                <h4>Motivationsschreiben</h4>
-                <span>PDF</span>
-            </a>
-            
-            <a href="#" class="dokument-card">
-                <div class="dokument-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                        <polyline points="10 9 9 9 8 9"/>
                     </svg>
                 </div>
                 <h4>Zeugnisse</h4>
-                <span>PDF</span>
-            </a>
-            
-            <a href="#" class="dokument-card">
-                <div class="dokument-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                        <circle cx="8.5" cy="8.5" r="1.5"/>
-                        <polyline points="21 15 16 10 5 21"/>
-                    </svg>
-                </div>
-                <h4>Diplome</h4>
                 <span>PDF</span>
             </a>
         </div>
