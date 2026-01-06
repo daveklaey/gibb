@@ -1246,7 +1246,7 @@
             <div class="beispiel-card reveal" id="beispiel-1">
                 <div class="beispiel-header" onclick="toggleBeispiel('beispiel-1')">
                     <span class="beispiel-tag">Interaktiver Lernpfad</span>
-                    <span class="beispiel-preview-text">Screenshot / Demo</span>
+                    <img src="https://raw.githubusercontent.com/daveklaey/gibb/main/docs/images/wohnen-preview.png" alt="Wohnen Lernpfad Preview" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0.3;">
                     <button class="beispiel-expand-btn">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <line x1="12" y1="5" x2="12" y2="19"/>
@@ -1264,13 +1264,6 @@
                                 <circle cx="9" cy="7" r="4"/>
                             </svg>
                             EBA-Lernende
-                        </span>
-                        <span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <polyline points="12 6 12 12 16 14"/>
-                            </svg>
-                            ~9 Lektionen
                         </span>
                     </div>
                 </div>
@@ -1303,7 +1296,7 @@
             <div class="beispiel-card reveal" id="beispiel-2">
                 <div class="beispiel-header" onclick="toggleBeispiel('beispiel-2')">
                     <span class="beispiel-tag">Schulzeitung</span>
-                    <span class="beispiel-preview-text">Screenshot / Demo</span>
+                    <img src="https://raw.githubusercontent.com/daveklaey/gibb/main/docs/images/zeitung-preview.png" alt="Regina Today Preview" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0.3;">
                     <button class="beispiel-expand-btn">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <line x1="12" y1="5" x2="12" y2="19"/>
@@ -1313,7 +1306,7 @@
                 </div>
                 <div class="beispiel-summary">
                     <h3>Regina Today – Schulzeitung</h3>
-                    <p>Ein kollaboratives Zeitungsprojekt mit Lernenden des Schulhotels Regina Interlaken, das journalistische Arbeit mit Hotelleriewissen verbindet.</p>
+                    <p>Ein klassenübergreifendes Zeitungsprojekt, welches die Zusammenarbeit mit einer anderen Berufsgruppe in einem anderen Lehrjahr im Kontext des bilingualen ABU-Unterrichts förderte.</p>
                     <div class="beispiel-meta">
                         <span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1322,32 +1315,17 @@
                             </svg>
                             HoFa & ReFa
                         </span>
-                        <span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <polyline points="12 6 12 12 16 14"/>
-                            </svg>
-                            Projektwoche
-                        </span>
                     </div>
                 </div>
                 <div class="beispiel-details">
                     <h4>Projektbeschreibung</h4>
                     <p>
-                        Ein fächerübergreifendes Zeitungsprojekt, bei dem Lernende in Teams eigene 
-                        Artikel recherchieren, schreiben und layouten. Die Zeitung "Regina Today" 
-                        behandelt Themen rund um das Schulhotel, Berufsbildung und lokale Events.
+                        Ein Zeitungsprojekt, bei dem Lernende in klassenübergreifenden Zweierteams eigene 
+                        Artikel recherchieren und auf Englisch schreiben mussten. Jedes Team erstellte zwei 
+                        Artikel, in welchen sie Gesellschaftsthemen mit Hilfe von S&K Werkzeugen (z.B. Interview 
+                        oder Umfrage) thematisierten. Die Zeitung "Regina Today" wurde anschliessend von den 
+                        Lehrpersonen finalisiert und den Lernenden ausgedruckt zum Ende des Schulkurses abgegeben.
                     </p>
-                    <h4>Inhalte der Zeitung</h4>
-                    <ul>
-                        <li>Interviews mit Lehrpersonen und Betriebsleitung</li>
-                        <li>Berichte über lokale Hotels und Restaurants (Victoria Jungfrau, Sapori)</li>
-                        <li>Vergleich verschiedener Berufsbilder (HoFa, ReFa, HoKo)</li>
-                        <li>Sport- und Freizeitangebote in der Region</li>
-                        <li>Wirtschaftsthemen (Währungen, Online-Shopping)</li>
-                    </ul>
-                    <h4>Lernziele</h4>
-                    <p>Journalistische Grundlagen, Teamarbeit, Layout-Design, Interviewtechniken, kritisches Denken</p>
                     <a href="https://raw.githubusercontent.com/daveklaey/gibb/main/docs/Zeitung_Hofa_final.pdf" target="_blank" class="beispiel-link">
                         Zur Projektzeitung (PDF)
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1573,7 +1551,14 @@
         // Toggle Beispiel Cards
         function toggleBeispiel(id) {
             const card = document.getElementById(id);
-            card.classList.toggle('expanded');
+            const isCurrentlyExpanded = card.classList.contains('expanded');
+            
+            // Toggle nur diese eine Karte
+            if (isCurrentlyExpanded) {
+                card.classList.remove('expanded');
+            } else {
+                card.classList.add('expanded');
+            }
         }
     </script>
 </body>
