@@ -711,18 +711,11 @@
             stroke: var(--bern-red);
         }
         
-        /* Expandable Details */
+        /* Expandable Details - IMMER SICHTBAR */
         .beispiel-details {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease, padding 0.5s ease;
+            padding: 30px;
             background: white;
             border-top: 2px dashed var(--bern-yellow);
-        }
-        
-        .beispiel-card.expanded .beispiel-details {
-            max-height: 600px;
-            padding: 30px;
         }
         
         .beispiel-details h4 {
@@ -750,17 +743,26 @@
         .beispiel-link {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             color: var(--bern-red);
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
-            margin-top: 15px;
-            transition: gap 0.3s ease;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            padding: 12px 20px;
+            background: var(--cream);
+            border: 2px solid var(--bern-red);
+            transition: all 0.3s ease;
         }
         
         .beispiel-link:hover {
+            background: var(--bern-red);
+            color: white;
             gap: 15px;
+        }
+        
+        .beispiel-link:hover svg {
+            stroke: white;
         }
         
         /* ============================================
@@ -1246,12 +1248,6 @@
                 <div class="beispiel-header">
                     <span class="beispiel-tag">Interaktiver Lernpfad</span>
                     <img src="https://raw.githubusercontent.com/daveklaey/gibb/main/docs/images/wohnen-preview.png" alt="Wohnen Lernpfad Preview" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0.3; z-index: 0;">
-                    <button class="beispiel-expand-btn" onclick="toggleBeispiel('beispiel-1')">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="12" y1="5" x2="12" y2="19"/>
-                            <line x1="5" y1="12" x2="19" y2="12"/>
-                        </svg>
-                    </button>
                 </div>
                 <div class="beispiel-summary">
                     <h3>Wohnen – selbstgestaltete Website</h3>
@@ -1280,8 +1276,8 @@
                     <h4>Eingesetzte Tools</h4>
                     <p>HTML/CSS/JavaScript, GitHub Pages, interaktive Entscheidungsszenarien</p>
                     <a href="https://daveklaey.github.io/Wohnen-eba/index.html" target="_blank" class="beispiel-link">
-                        Zur interaktiven Demo
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        Zum interaktiven Lernpfad
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
                     </a>
@@ -1293,12 +1289,6 @@
                 <div class="beispiel-header">
                     <span class="beispiel-tag">Schulzeitung</span>
                     <img src="https://raw.githubusercontent.com/daveklaey/gibb/main/docs/images/zeitung-preview.png" alt="Regina Today Preview" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0.3; z-index: 0;">
-                    <button class="beispiel-expand-btn" onclick="toggleBeispiel('beispiel-2')">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="12" y1="5" x2="12" y2="19"/>
-                            <line x1="5" y1="12" x2="19" y2="12"/>
-                        </svg>
-                    </button>
                 </div>
                 <div class="beispiel-summary">
                     <h3>Regina Today – Schulzeitung</h3>
@@ -1324,7 +1314,7 @@
                     </p>
                     <a href="https://raw.githubusercontent.com/daveklaey/gibb/main/docs/Zeitung_Hofa_final.pdf" target="_blank" class="beispiel-link">
                         Zur Projektzeitung (PDF)
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
                     </a>
@@ -1543,12 +1533,6 @@
                 }
             });
         });
-        
-        // Toggle Beispiel Cards
-        function toggleBeispiel(id) {
-            const card = document.getElementById(id);
-            card.classList.toggle('expanded');
-        }
     </script>
 </body>
 </html>
