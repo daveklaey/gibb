@@ -1245,7 +1245,7 @@
             <div class="beispiel-card reveal" id="beispiel-1">
                 <div class="beispiel-header">
                     <span class="beispiel-tag">Interaktiver Lernpfad</span>
-                    <img src="https://raw.githubusercontent.com/daveklaey/gibb/main/docs/images/wohnen-preview.png" alt="Wohnen Lernpfad Preview" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0.3;">
+                    <img src="https://raw.githubusercontent.com/daveklaey/gibb/main/docs/images/wohnen-preview.png" alt="Wohnen Lernpfad Preview" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0.3; z-index: 0;">
                     <button class="beispiel-expand-btn" onclick="toggleBeispiel('beispiel-1')">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <line x1="12" y1="5" x2="12" y2="19"/>
@@ -1254,8 +1254,8 @@
                     </button>
                 </div>
                 <div class="beispiel-summary">
-                    <h3>Wohnen – Mietrecht verstehen</h3>
-                    <p>Interaktiver Lernpfad für EBA-Lernende mit dem Protagonisten Leandro, der durch realistische Wohnungssuche-Szenarien führt.</p>
+                    <h3>Wohnen – selbstgestaltete Website</h3>
+                    <p>Ein interaktiver Lernpfad für EBA-Lernende mit dem Protagonisten Leandro, der sie durch ein realistisches Szenario zum Thema Wohnen führt. Da dies ein aktuelles Projekt ist, befindet es sich im stetigen Wandel. Zurzeit sind erst die Module 1 und 2 erstellt.</p>
                     <div class="beispiel-meta">
                         <span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1270,16 +1270,13 @@
                     <h4>Projektbeschreibung</h4>
                     <p>
                         Ein webbasierter Lernpfad, der EBA-Lernende durch die Welt des Mietrechts führt. 
-                        Der 17-jährige Protagonist Leandro sucht seine erste eigene Wohnung und nimmt 
-                        die Lernenden mit auf diese Reise.
+                        Der 18-jährige Protagonist Leandro hat gerade seine Lehre abgeschlossen und sucht 
+                        nun seine erste eigene Wohnung und nimmt die Lernenden mit auf diese Reise. Die 
+                        Lernenden können selbständig auf der Website navigieren und mit Leandro miterleben, 
+                        wie es vor der Wohnungssuche zuerst ein aktuelles Budget braucht, wie eine Wohnung 
+                        schliesslich korrekt und rechtzeitig gekündigt wird und was es dazwischen alles noch 
+                        zu berücksichtigen gibt.
                     </p>
-                    <h4>Lernziele</h4>
-                    <ul>
-                        <li>Wohnungsinserate lesen und verstehen</li>
-                        <li>Mietverträge interpretieren</li>
-                        <li>Rechte und Pflichten als Mieter kennen</li>
-                        <li>Budget für Wohnkosten erstellen</li>
-                    </ul>
                     <h4>Eingesetzte Tools</h4>
                     <p>HTML/CSS/JavaScript, GitHub Pages, interaktive Entscheidungsszenarien</p>
                     <a href="https://daveklaey.github.io/Wohnen-eba/index.html" target="_blank" class="beispiel-link">
@@ -1295,7 +1292,7 @@
             <div class="beispiel-card reveal" id="beispiel-2">
                 <div class="beispiel-header">
                     <span class="beispiel-tag">Schulzeitung</span>
-                    <img src="https://raw.githubusercontent.com/daveklaey/gibb/main/docs/images/zeitung-preview.png" alt="Regina Today Preview" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0.3;">
+                    <img src="https://raw.githubusercontent.com/daveklaey/gibb/main/docs/images/zeitung-preview.png" alt="Regina Today Preview" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0.3; z-index: 0;">
                     <button class="beispiel-expand-btn" onclick="toggleBeispiel('beispiel-2')">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <line x1="12" y1="5" x2="12" y2="19"/>
@@ -1550,14 +1547,7 @@
         // Toggle Beispiel Cards
         function toggleBeispiel(id) {
             const card = document.getElementById(id);
-            const isCurrentlyExpanded = card.classList.contains('expanded');
-            
-            // Toggle nur diese eine Karte
-            if (isCurrentlyExpanded) {
-                card.classList.remove('expanded');
-            } else {
-                card.classList.add('expanded');
-            }
+            card.classList.toggle('expanded');
         }
     </script>
 </body>
